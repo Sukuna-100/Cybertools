@@ -1,0 +1,202 @@
+/* Responsive Styles */
+@media (max-width: 1200px) {
+    .nav-container {
+        padding: 15px 3%;
+    }
+    
+    main {
+        padding: 50px 3%;
+    }
+    
+    .youtuber-grid {
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    }
+}
+
+@media (max-width: 992px) {
+    .glitch {
+        font-size: 3rem;
+    }
+    
+    .typewriter {
+        font-size: 1.3rem;
+    }
+    
+    .section-title {
+        font-size: 2rem;
+    }
+    
+    .tool-card {
+        flex-direction: column;
+    }
+    
+    .tool-img {
+        width: 100%;
+        height: 200px;
+    }
+}
+
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+    }
+    
+    .nav-container {
+        justify-content: center;
+    }
+    
+    .glitch {
+        font-size: 2.5rem;
+    }
+    
+    .typewriter {
+        font-size: 1.1rem;
+        white-space: normal;
+        animation: none;
+        border-right: none;
+    }
+    
+    .section-title {
+        font-size: 1.8rem;
+    }
+    
+    .youtuber-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+    
+    .tab-buttons {
+        flex-direction: column;
+    }
+    
+    .tab-btn {
+        padding: 12px;
+    }
+    
+    .ip-detector-tool {
+        width: 90%;
+        right: 5%;
+    }
+}
+
+@media (max-width: 576px) {
+    .glitch {
+        font-size: 2rem;
+    }
+    
+    .header-content {
+        padding: 0 15px;
+    }
+    
+    .section-title {
+        font-size: 1.5rem;
+    }
+    
+    .youtuber-name {
+        font-size: 1.3rem;
+    }
+    
+    .tool-name {
+        font-size: 1.2rem;
+    }
+    
+    .tool-links {
+        flex-direction: column;
+    }
+    
+    .tool-link {
+        width: 100%;
+        text-align: center;
+        margin-bottom: 10px;
+    }
+    
+    .quiz-options {
+        grid-template-columns: 1fr;
+    }
+    
+    .ai-header {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .ai-avatar {
+        margin-right: 0;
+        margin-bottom: 15px;
+    }
+}
+
+/* Mobile menu toggle */
+.mobile-menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: var(--text-color);
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    .mobile-menu-toggle {
+        display: block;
+        position: absolute;
+        right: 20px;
+        top: 15px;
+    }
+    
+    .nav-links {
+        position: fixed;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        background-color: var(--primary-color);
+        flex-direction: column;
+        align-items: center;
+        padding: 20px 0;
+        border-bottom: 1px solid var(--accent-color);
+        transform: translateY(-150%);
+        transition: transform 0.3s ease;
+        z-index: 99;
+    }
+    
+    .nav-links.active {
+        transform: translateY(0);
+    }
+    
+    .nav-links li {
+        margin: 10px 0;
+    }
+}
+
+/* Print styles */
+@media print {
+    .preloader, .ip-detector-tool, .matrix-animation, .scroll-down, .cyber-nav, .ai-section, .quiz-section, .cyber-footer {
+        display: none !important;
+    }
+    
+    body {
+        background-color: white !important;
+        color: black !important;
+    }
+    
+    .youtuber-card, .tool-card {
+        break-inside: avoid;
+        margin-bottom: 20px;
+    }
+    
+    .section-title {
+        color: black !important;
+    }
+    
+    .section-title::after {
+        background-color: black !important;
+    }
+    
+    a {
+        color: blue !important;
+        text-decoration: underline !important;
+    }
+}

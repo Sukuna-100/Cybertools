@@ -1,0 +1,290 @@
+/* Matrix Animation */
+@keyframes matrix-fall {
+    from { transform: translateY(-100%); }
+    to { transform: translateY(100vh); }
+}
+
+.matrix-animation::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(2, 12, 27, 0.1) 0%, var(--dark-bg) 80%);
+    z-index: 1;
+}
+
+.matrix-character {
+    position: absolute;
+    color: var(--matrix-green);
+    font-family: 'Courier New', monospace;
+    font-size: 16px;
+    opacity: 0.8;
+    animation: matrix-fall linear infinite;
+    text-shadow: 0 0 5px var(--matrix-green);
+}
+
+/* Hover Animations */
+.youtuber-card, .tool-card {
+    position: relative;
+    overflow: hidden;
+}
+
+.youtuber-card::after, .tool-card::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(100, 255, 218, 0.1) 0%, transparent 100%);
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.youtuber-card:hover::after, .tool-card:hover::after {
+    opacity: 1;
+}
+
+/* Button Animations */
+.btn-hover-animate {
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-hover-animate::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 5px;
+    height: 5px;
+    background: rgba(255, 255, 255, 0.5);
+    opacity: 0;
+    border-radius: 100%;
+    transform: scale(1, 1) translate(-50%, -50%);
+    transform-origin: 50% 50%;
+}
+
+.btn-hover-animate:focus:not(:active)::after {
+    animation: ripple 1s ease-out;
+}
+
+@keyframes ripple {
+    0% {
+        transform: scale(0, 0);
+        opacity: 0.5;
+    }
+    100% {
+        transform: scale(20, 20);
+        opacity: 0;
+    }
+}
+
+/* Floating Animation */
+.floating {
+    animation: floating 3s ease-in-out infinite;
+}
+
+@keyframes floating {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0px); }
+}
+
+/* Glow Animation */
+.glow {
+    animation: glow 2s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+    from {
+        box-shadow: 0 0 5px rgba(100, 255, 218, 0.5);
+    }
+    to {
+        box-shadow: 0 0 20px rgba(100, 255, 218, 0.8);
+    }
+}
+
+/* Terminal Cursor Animation */
+.terminal-cursor {
+    display: inline-block;
+    width: 10px;
+    height: 20px;
+    background-color: var(--matrix-green);
+    animation: blink 1s infinite;
+}
+
+/* Section Entrance Animations */
+.section-entrance {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.section-entrance.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Tooltip Animation */
+.tooltip {
+    position: relative;
+}
+
+.tooltip::before {
+    content: attr(data-tooltip);
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: var(--secondary-color);
+    color: var(--text-color);
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 0.8rem;
+    white-space: nowrap;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s;
+    border: 1px solid var(--accent-color);
+    z-index: 10;
+}
+
+.tooltip:hover::before {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(-10px);
+}
+
+/* Background Pattern Animation */
+.bg-pattern {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: 
+        linear-gradient(rgba(100, 255, 218, 0.1) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(100, 255, 218, 0.1) 1px, transparent 1px);
+    background-size: 40px 40px;
+    animation: bg-scroll 100s linear infinite;
+}
+
+@keyframes bg-scroll {
+    from { background-position: 0 0; }
+    to { background-position: 1000px 1000px; }
+}
+
+/* Hexagon Grid Animation */
+.hexagon-grid {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: -1;
+}
+
+.hexagon {
+    position: absolute;
+    width: 100px;
+    height: 57.74px;
+    background-color: rgba(100, 255, 218, 0.05);
+    margin: 28.87px 0;
+    border-left: 1px solid rgba(100, 255, 218, 0.1);
+    border-right: 1px solid rgba(100, 255, 218, 0.1);
+    animation: hexagon-float 20s infinite linear;
+}
+
+.hexagon::before, .hexagon::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    border-left: 50px solid transparent;
+    border-right: 50px solid transparent;
+}
+
+.hexagon::before {
+    bottom: 100%;
+    border-bottom: 28.87px solid rgba(100, 255, 218, 0.05);
+}
+
+.hexagon::after {
+    top: 100%;
+    border-top: 28.87px solid rgba(100, 255, 218, 0.05);
+}
+
+@keyframes hexagon-float {
+    0% { transform: translateY(0) rotate(0deg); opacity: 0.1; }
+    50% { transform: translateY(-100px) rotate(180deg); opacity: 0.3; }
+    100% { transform: translateY(0) rotate(360deg); opacity: 0.1; }
+}
+
+/* Binary Rain Animation */
+.binary-rain {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: -1;
+}
+
+.binary-digit {
+    position: absolute;
+    color: rgba(0, 255, 65, 0.7);
+    font-family: 'Courier New', monospace;
+    font-size: 16px;
+    animation: binary-fall linear infinite;
+    text-shadow: 0 0 5px rgba(0, 255, 65, 0.5);
+}
+
+@keyframes binary-fall {
+    0% { transform: translateY(-100px); opacity: 1; }
+    100% { transform: translateY(100vh); opacity: 0; }
+}
+
+/* Circuit Animation */
+.circuit-board {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: 
+        linear-gradient(90deg, var(--dark-bg) 21px, transparent 1%),
+        linear-gradient(var(--dark-bg) 21px, transparent 1%);
+    background-size: 22px 22px;
+    z-index: -1;
+}
+
+.circuit-line {
+    position: absolute;
+    background-color: rgba(100, 255, 218, 0.3);
+    animation: circuit-pulse 3s infinite;
+}
+
+.circuit-node {
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    background-color: var(--accent-color);
+    border-radius: 50%;
+    animation: circuit-node-pulse 2s infinite;
+}
+
+@keyframes circuit-pulse {
+    0% { opacity: 0.3; }
+    50% { opacity: 0.8; }
+    100% { opacity: 0.3; }
+}
+
+@keyframes circuit-node-pulse {
+    0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(100, 255, 218, 0.7); }
+    70% { transform: scale(1.3); box-shadow: 0 0 0 10px rgba(100, 255, 218, 0); }
+    100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(100, 255, 218, 0); }
+}

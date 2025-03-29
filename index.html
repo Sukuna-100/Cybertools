@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CyberSecurity Hub - Advanced Learning Portal</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/animations.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Pre-loader Animation -->
+    <div class="preloader">
+        <div class="hacker-animation">
+            <div class="terminal">
+                <div class="terminal-header">
+                    <div class="buttons">
+                        <span class="red"></span>
+                        <span class="yellow"></span>
+                        <span class="green"></span>
+                    </div>
+                    <div class="title">root@cyberhub:~</div>
+                </div>
+                <div class="terminal-body">
+                    <div class="line">Initializing cybersecurity protocols...</div>
+                    <div class="line">Bypassing firewalls...</div>
+                    <div class="line">Establishing secure connection...</div>
+                    <div class="line">Loading advanced tools...</div>
+                    <div class="line blink">Access granted. Welcome to CyberSecurity Hub.</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- IP Detection Tool (Fixed Top Right) -->
+    <div class="ip-detector-tool">
+        <div class="ip-tool-header">
+            <i class="fas fa-network-wired"></i>
+            <span>IP Scanner</span>
+            <button class="close-ip-tool">&times;</button>
+        </div>
+        <div class="ip-tool-body">
+            <div class="scanning-animation">
+                <div class="radar"></div>
+                <div class="pulse"></div>
+            </div>
+            <div class="ip-result">
+                <p>Scanning your network...</p>
+                <div class="ip-address">IP: <span id="user-ip">Loading...</span></div>
+                <div class="ip-details">
+                    <p>Location: <span id="ip-location">Detecting...</span></p>
+                    <p>ISP: <span id="ip-isp">Unknown</span></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Header with Animated Background -->
+    <header class="main-header">
+        <div class="matrix-animation"></div>
+        <div class="header-content">
+            <h1 class="glitch" data-text="CYBERSECURITY HUB">CYBERSECURITY HUB</h1>
+            <p class="typewriter">Your ultimate resource for cybersecurity knowledge, tools, and training</p>
+        </div>
+        <div class="scroll-down">
+            <div class="chevron"></div>
+            <div class="chevron"></div>
+            <div class="chevron"></div>
+        </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav class="cyber-nav">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <i class="fas fa-shield-alt"></i>
+                <span>CyberHub</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#youtubers"><i class="fab fa-youtube"></i> YouTubers</a></li>
+                <li><a href="#tools"><i class="fas fa-tools"></i> Tools</a></li>
+                <li><a href="#resources"><i class="fas fa-book"></i> Resources</a></li>
+                <li><a href="#ai-section"><i class="fas fa-robot"></i> AI Assistant</a></li>
+                <li><button class="ip-tool-btn"><i class="fas fa-search-location"></i> Scan IP</button></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Cybersecurity YouTubers Section -->
+        <section id="youtubers" class="youtubers-section">
+            <h2 class="section-title">Top 20 Cybersecurity YouTubers</h2>
+            <div class="youtuber-grid" id="youtuber-container">
+                <!-- Filled by JavaScript -->
+            </div>
+        </section>
+
+        <!-- Cybersecurity Tools Section -->
+        <section id="tools" class="tools-section">
+            <h2 class="section-title">Essential Cybersecurity Tools</h2>
+            <div class="tools-tabs">
+                <div class="tab-buttons">
+                    <button class="tab-btn active" data-tab="pentesting">Penetration Testing</button>
+                    <button class="tab-btn" data-tab="forensics">Digital Forensics</button>
+                    <button class="tab-btn" data-tab="network">Network Security</button>
+                    <button class="tab-btn" data-tab="cryptography">Cryptography</button>
+                </div>
+                <div class="tab-content active" id="pentesting">
+                    <!-- Filled by JavaScript -->
+                </div>
+                <div class="tab-content" id="forensics">
+                    <!-- Filled by JavaScript -->
+                </div>
+                <div class="tab-content" id="network">
+                    <!-- Filled by JavaScript -->
+                </div>
+                <div class="tab-content" id="cryptography">
+                    <!-- Filled by JavaScript -->
+                </div>
+            </div>
+        </section>
+
+        <!-- AI Assistant Section -->
+        <section id="ai-section" class="ai-section">
+            <h2 class="section-title">Cyber AI Assistant</h2>
+            <div class="ai-container">
+                <div class="ai-header">
+                    <div class="ai-avatar">
+                        <div class="ai-animation">
+                            <div class="ai-eye left"></div>
+                            <div class="ai-eye right"></div>
+                        </div>
+                    </div>
+                    <h3>Ask me anything about cybersecurity</h3>
+                </div>
+                <div class="ai-chat">
+                    <div class="ai-message">
+                        <p>Hello! I'm your Cyber AI Assistant. I can help explain security concepts, suggest tools, or answer your cybersecurity questions. What would you like to know?</p>
+                    </div>
+                </div>
+                <div class="ai-input">
+                    <input type="text" placeholder="Ask about cybersecurity...">
+                    <button class="ai-send"><i class="fas fa-paper-plane"></i></button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Interactive Cybersecurity Quiz -->
+        <section class="quiz-section">
+            <h2 class="section-title">Test Your Cybersecurity Knowledge</h2>
+            <div class="quiz-container">
+                <div class="quiz-progress">
+                    <div class="progress-bar"></div>
+                </div>
+                <div class="quiz-question">
+                    <h3>Question <span id="question-number">1</span>/10</h3>
+                    <p id="question-text">What is the most common type of cyber attack?</p>
+                </div>
+                <div class="quiz-options" id="options-container">
+                    <!-- Filled by JavaScript -->
+                </div>
+                <div class="quiz-navigation">
+                    <button class="quiz-prev" disabled>Previous</button>
+                    <button class="quiz-next">Next</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="cyber-footer">
+        <div class="footer-grid">
+            <div class="footer-about">
+                <h3>About CyberHub</h3>
+                <p>Your comprehensive cybersecurity resource center with tools, tutorials, and the latest security information.</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-github"></i></a>
+                    <a href="#"><i class="fab fa-discord"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+            <div class="footer-links">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#youtubers">YouTubers</a></li>
+                    <li><a href="#tools">Security Tools</a></li>
+                    <li><a href="#ai-section">AI Assistant</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                </ul>
+            </div>
+            <div class="footer-tools">
+                <h3>Quick Tools</h3>
+                <ul>
+                    <li><button class="ip-tool-btn">IP Scanner</button></li>
+                    <li><button class="password-checker-btn">Password Checker</button></li>
+                    <li><button class="encryption-btn">Text Encryption</button></li>
+                </ul>
+            </div>
+            <div class="footer-newsletter">
+                <h3>Stay Updated</h3>
+                <p>Subscribe to our cybersecurity newsletter</p>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="Your email" required>
+                    <button type="submit">Subscribe</button>
+                </form>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2023 CyberSecurity Hub. All rights reserved.</p>
+            <p>This website is for educational purposes only.</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="scripts/ip-detector.js"></script>
+    <script src="scripts/animations.js"></script>
+    <script src="scripts/main.js"></script>
+</body>
+</html>
